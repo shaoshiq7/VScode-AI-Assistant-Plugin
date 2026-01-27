@@ -6,11 +6,10 @@ VScode智能助手插件 目前支持deepseek和豆包
   <img src="https://github.com/shaoshiq7/VScode-AI-Assistant-Plugin/raw/main/show/lv_0_20260127224148.gif" width="600" alt="插件功能演示">
 </div>
 =======
-# Hello World (React + Vite)
 
-This is an implementation of the default [Hello World](https://github.com/microsoft/vscode-webview-ui-toolkit-samples/tree/main/default/hello-world) sample extension that demonstrates how to set up and use a [React](https://reactjs.org/) + [Vite](https://vitejs.dev/) + [Webview UI Toolkit](https://github.com/microsoft/vscode-webview-ui-toolkit) webview extension.
-
-![A screenshot of the sample extension.](./assets/hello-world.png)
+<div align="center">
+  <img src="https://github.com/shaoshiq7/VScode-AI-Assistant-Plugin/raw/main/show/lv_0_20260127224148.gif" width="600" alt="插件功能演示">
+</div>
 
 ## Documentation
 
