@@ -1,0 +1,89 @@
+{
+  "name": "hello-world-react-vite",
+  "displayName": "hello-world-react-vite",
+  "description": "A hello world sample extension to demonstrate using React + Vite with the Webview UI Toolkit for VS Code.",
+  "version": "0.0.1",
+  "publisher": "ssq17",
+  "repository": { "type": "git", "url": "https://github.com/shaoshiq7/VScode-AI-Assistant-Plugin" },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+
+    "configuration": {
+  "title": "AI 助手全局配置",
+  "properties": {
+    "aiAssistant.currentModel": {
+      "type": "string",
+      "enum": [
+        "DeepSeek",
+        "Doubao"
+      ],
+      "default": "DeepSeek",
+      "description": "选择当前正在使用的 AI 模型"
+    },
+    "aiAssistant.deepseekKey": {
+      "type": "string",
+      "default": "",
+      "description": "DeepSeek 的 API Key"
+    },
+    "aiAssistant.doubaoKey": {
+      "type": "string",
+      "default": "",
+      "description": "豆包 (火山引擎) 的 API Key"
+    },
+    "aiAssistant.doubaoEndpoint": {
+      "type": "string",
+      "default": "",
+      "description": "豆包的接入点 ID (Endpoint ID)。注意：豆包必须配置此项才能调用"
+    }
+  }
+},
+
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "deepseek-sidebar",
+          "title": "VScode智能AI助手",
+          "icon": "$(comment-discussion)"
+        }
+      ]
+    },
+    "views": {
+      "deepseek-sidebar": [
+        {
+          "type": "webview",
+          "id": "deepseek-chat-view",
+          "name": "多模型智能对话"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "install:all": "npm install && cd webview-ui && npm install",
+    "start:webview": "cd webview-ui && npm run start",
+    "build:webview": "cd webview-ui && npm run build",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.46.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "axios": "^1.13.2"
+  }
+}

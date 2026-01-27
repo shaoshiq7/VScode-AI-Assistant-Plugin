@@ -1,0 +1,52 @@
+/* 修改后的 main */
+main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; 👈 删掉这行，让内容从顶部开始排 */
+  height: 100vh; /* 使用 vh 确保占满整个侧边栏高度 */
+  padding: 0;   /* 边距交给内部的 section 处理，防止布局溢出 */
+  box-sizing: border-box;
+}
+
+/* 保持你的代码块样式 */
+code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: var(--vscode-editor-font-family);
+}
+
+pre {
+  margin: 10px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 100%; /* 防止超长代码撑破侧边栏 */
+}
+
+pre > div {
+  background: #1e1e1e !important; 
+  font-size: 12px !important;
+  border: 1px solid #333; /* 增加一个微弱的边框，让代码块更有质感 */
+}
+
+/* 代码块容器 */
+.code-block-container {
+  margin: 10px 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* 复制按钮初始状态：半透明 */
+.copy-button {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* 鼠标移入代码块时显示按钮 */
+.code-block-container:hover .copy-button {
+  opacity: 0.9 !important;
+}
+
+.copy-button:hover {
+  background-color: var(--vscode-button-hoverBackground) !important;
+}
