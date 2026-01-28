@@ -13,38 +13,38 @@ VScode智能助手插件 目前支持deepseek和豆包
 VS Code 智能助手插件 (React + Vite)
 本项目展示了如何结合 React 与 Vite 构建高性能 Webview 插件，并集成 DeepSeek 与 豆包 大模型实现流式交互。
 
-## 技术架构与实现
+# 技术架构与实现
 插件采用前后端分离的设计模式，确保了 IDE 环境下的极致流畅度。
 
-# 核心技术栈
+## 核心技术栈
 插件宿主 (Backend)：TypeScript + VS Code API。负责 IDE 原生功能、侧边栏注册及配置安全管理。
 
 用户界面 (Frontend)：React + Vite + Webview UI Toolkit。打造与 VS Code 原生设计语言高度一致的高性能 UI。
 
 通信机制：postMessage API。实现了 Webview 视图层与插件宿主进程之间的双向实时数据交换。
 
-# 数据流向
+## 数据流向
 用户输入 (React) → postMessage → 插件宿主 (Node.js) → API (DeepSeek/豆包) → 流式响应 → postMessage → 界面渲染 (React)
 
-## 功能特性
-# 智能对话交互
+# 功能特性
+## 智能对话交互
 活动栏集成：内嵌于 VS Code 左侧活动栏，一键唤起，不干扰核心编辑区。
 
 响应式布局：完美适配侧边栏宽度动态缩放，支持多轮对话上下文追踪。
 
-# 多模型支持
+## 多模型支持
 灵活路由：内置多模型适配器，完美兼容 DeepSeek 与 豆包 (火山引擎) 协议。
 
 统一设置：通过 IDE 原生设置面板（settings.json）即可一键切换当前模型。
 
-# 流式渲染与富文本
+## 流式渲染与富文本
 打字机体验：采用 Stream 流式解析技术，实现毫秒级响应的逐字回复。
 
 富文本支持：集成 react-markdown，支持完整的 Markdown 语法及列表展示。
 
 代码高亮：使用插件级语法高亮显示，并提供“一键复制”功能，优化开发流程。
 
-## 环境要求
+# 环境要求
 VS Code 版本: ^1.75.0
 
 Node.js 版本: ^18.0.0
